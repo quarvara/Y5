@@ -316,9 +316,7 @@ const handleAddToCard = () => {
           <div className="container-fluid product-detail px-3 py-3 mb-4 card">
             <h1>Product details</h1>
             <div className="product-details">
-              {data1 && (
-                <div dangerouslySetInnerHTML={{ __html: data1.features }} />
-              )}
+                <div dangerouslySetInnerHTML={{ __html: data1["fetaures"] }} />
             </div>
           </div>
           <div className="button-container flex">

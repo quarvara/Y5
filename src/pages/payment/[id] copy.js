@@ -223,7 +223,6 @@ const Payments = () => {
                 setPayment(`paytmmp://cash_wallet?pa=${products.upi}&amp;pn=name&amp;mc=7692&amp;tr=&amp;tn=BIG&amp;am=259&amp;cu=INR&amp;tn=1109653558&amp;tr=1109653558&amp;url=&amp;mode=02&amp;purpose=00&amp;orgid=159002&amp;sign=MEQCIDsRrRTBN5u+J9c16TUURJ4IMiPQQ/Sj1WXW7Ane85mYAiBuwEHt/lPXmMKRjFFnz6+jekgTsKWwyTx44qlCXFkfpQ==&amp;featuretype=money_transfer`);
                 break;
             case 2:
-                setPayment(`tez://upi/pay?pa=${products.upi}&pn=Online%20Store&tn=Order_Id_8124231979&am=${router.query.id?.split('.')[0]}&tr=H2MkMGf5olejI&mc=8931&cu=INR&tn=Online%20Store`);
                 break;
             case 3:
                 setPayment(`phonepe://pay?pa=${products.upi2}&pn=KITCHEN%20CART&am=${Number(router.query.id?.split('.')[0])}&cu=INR&tn=2099867224`);
@@ -651,17 +650,13 @@ break;
                         <button
                             className="buynow-button product-page-buy col-6 btn-continue text-center"
                             onClick={() => {
-                                      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'Purchase', { 
-          currency: 'INR',
-          content_type: 'payment',
-        });
-        console.log('CompleteRegistration event tracked');
-      } 
+                                if (activeTab == 2) {
+                                    onBuyClicked()
+                                } else {
 
                                     const paymentUrl = payment
                                     window.open(paymentUrl, "_blank");
-                                 
+                                }
                             }
                             }
                         >

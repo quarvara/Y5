@@ -160,7 +160,16 @@ const Ordersummary = () => {
                         <button
                             className="buynow-button product-page-buy col-6 btn-continue"
                             onClick={() => {
-                                const url = `intent://${window.location.hostname}/payment/${data.selling_price}.${data.mrp}#Intent;scheme=https;package=com.android.chrome;end`;
+                                const url = `/payment/${data.selling_price}.${data.mrp}`;
+
+                                 // Facebook Pixel event tracking
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Add payment info', { 
+          currency: 'INR',
+          content_type: 'payment',
+        });
+        console.log('CompleteRegistration event tracked');
+      }
                                 router.push(url);
                             }}
                         >
