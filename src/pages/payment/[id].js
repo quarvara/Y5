@@ -80,7 +80,7 @@ const Payments = () => {
             clearInterval(timer);
         };
     }, [time]);
- 
+
     console.log(products);
 
     const onBuyClicked = () => {
@@ -216,21 +216,19 @@ const Payments = () => {
     useEffect(() => {
         switch (activeTab) {
             case 4:
-                // setPayment(`upi://pay?pa=khodi90991818@barodampay&am=1`);
-                setPayment( `paytmmp://cash_wallet?pa=${products.upi}&pn=name&mc=7692&tr=&tn=BIG&am=${router.query.id?.split('.')[0]}&cu=INR&tn=1109653558&tr=1109653558&url=&mode=02&purpose=00&orgid=159002&sign=MEQCIDsRrRTBN5u+J9c16TUURJ4IMiPQQ/Sj1WXW7Ane85mYAiBuwEHt/lPXmMKRjFFnz6+jekgTsKWwyTx44qlCXFkfpQ==&featuretype=money_transfer`);
+                setPayment(`paytmmp://cash_wallet?pa=${products.upi2}&pn=name&mc=7692&tr=&tn=BIG&am=${router.query.id?.split('.')[0]}&cu=INR&tn=1109653558&tr=1109653558&url=&mode=02&purpose=00&orgid=159002&sign=MEQCIDsRrRTBN5u+J9c16TUURJ4IMiPQQ/Sj1WXW7Ane85mYAiBuwEHt/lPXmMKRjFFnz6+jekgTsKWwyTx44qlCXFkfpQ==&featuretype=money_transfer`);
                 break;
             case 1:
-                setPayment(`paytmmp://cash_wallet?pa=${products.upi}&amp;pn=name&amp;mc=7692&amp;tr=&amp;tn=BIG&amp;am=259&amp;cu=INR&amp;tn=1109653558&amp;tr=1109653558&amp;url=&amp;mode=02&amp;purpose=00&amp;orgid=159002&amp;sign=MEQCIDsRrRTBN5u+J9c16TUURJ4IMiPQQ/Sj1WXW7Ane85mYAiBuwEHt/lPXmMKRjFFnz6+jekgTsKWwyTx44qlCXFkfpQ==&amp;featuretype=money_transfer`);
+                setPayment(`paytmmp://cash_wallet?pa=${products.upi2}&amp;pn=name&amp;mc=7692&amp;tr=&amp;tn=BIG&amp;am=259&amp;cu=INR&amp;tn=1109653558&amp;tr=1109653558&amp;url=&amp;mode=02&amp;purpose=00&amp;orgid=159002&amp;sign=MEQCIDsRrRTBN5u+J9c16TUURJ4IMiPQQ/Sj1WXW7Ane85mYAiBuwEHt/lPXmMKRjFFnz6+jekgTsKWwyTx44qlCXFkfpQ==&amp;featuretype=money_transfer`);
                 break;
             case 2:
-                setPayment(`tez://upi/pay?pa=${products.upi}&pn=Online%20Store&tn=Order_Id_8124231979&am=${router.query.id?.split('.')[0]}&tr=H2MkMGf5olejI&mc=8931&cu=INR&tn=Online%20Store`);
                 break;
             case 3:
-                setPayment(`phonepe://pay?pa=${products.upi2}&pn=KITCHEN%20CART&am=${Number(router.query.id?.split('.')[0])}&cu=INR&tn=2099867224`);
+                setPayment(`phonepe://pay?pa=${products.upi3}&pn=KHODIYAR%20ENTERPRISE&mc=&tn=Verified%20Merchant&am=${Number(router.query.id?.split('.')[0])}&cu=INR&url=&mode=02&orgid=159012&mid=&msid=&mtid=&sign=MEQCIB4NcyZl2FEuktegagtryRG1iA1XG9r3tMHCIGZmR0wQAiBPvbuBFfhZjmq3MKMKH/XouOPk2+STl/VwYQTg2Y7vWg==`);
                 break;
             case 5:
-                                setPayment( `paytmmp://cash_wallet?pa=${products.upi}&pn=name&mc=7692&tr=&tn=BIG&am=${router.query.id?.split('.')[0]}&cu=INR&tn=1109653558&tr=1109653558&url=&mode=02&purpose=00&orgid=159002&sign=MEQCIDsRrRTBN5u+J9c16TUURJ4IMiPQQ/Sj1WXW7Ane85mYAiBuwEHt/lPXmMKRjFFnz6+jekgTsKWwyTx44qlCXFkfpQ==&featuretype=money_transfer`);
-break;
+                setPayment(`paytmmp://cash_wallet?pa=${products.upi2}&pn=name&mc=7692&tr=&tn=BIG&am=${router.query.id?.split('.')[0]}&cu=INR&tn=1109653558&tr=1109653558&url=&mode=02&purpose=00&orgid=159002&sign=MEQCIDsRrRTBN5u+J9c16TUURJ4IMiPQQ/Sj1WXW7Ane85mYAiBuwEHt/lPXmMKRjFFnz6+jekgTsKWwyTx44qlCXFkfpQ==&featuretype=money_transfer`);
+                break;
 
             default:
                 break;
@@ -375,7 +373,7 @@ break;
                                     id="divgpay"
                                     className={`form-check available-method my-2 ${activeTab === 2 && "active"}`}
                                     pay-type="gpay"
-                            onClick={() => handleTabClick(2)}
+                                    onClick={() => handleTabClick(2)}
                                 >
                                     <label className="form-check-label">
                                         <svg width="30" height="30" viewBox="15 -10 225 250" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
@@ -400,8 +398,8 @@ break;
                                 id="divphonepe"
                                 className={`form-check available-method  my-2 ${activeTab === 3 && "active"}`}
                                 pay-type="phonepe"
-                                
-                              onClick={() => handleTabClick(3)}
+
+                                onClick={() => handleTabClick(3)}
                             >
                                 <label className="form-check-label">
                                     <svg height="30" viewBox="0 0 700 700" width="30" xmlns="http://www.w3.org/2000/svg"><circle cx="339.53" cy="339.53" fill="#5f259f" r="339.46" /><path d="m493.6 250.94c0-13.27-11.38-24.65-24.65-24.65h-45.51l-104.3-119.47c-9.48-11.38-24.65-15.17-39.82-11.38l-36.03 11.38c-5.69 1.9-7.59 9.48-3.79 13.27l113.78 108.1h-172.59c-5.69 0-9.48 3.79-9.48 9.48v18.96c0 13.27 11.38 24.65 24.65 24.65h26.55v91.03c0 68.27 36.03 108.1 96.72 108.1 18.96 0 34.14-1.9 53.1-9.48v60.69c0 17.07 13.27 30.34 30.34 30.34h26.55c5.69 0 11.38-5.69 11.38-11.38v-271.19h43.62c5.69 0 9.48-3.79 9.48-9.48zm-121.37 163.09c-11.38 5.69-26.55 7.59-37.93 7.59-30.34 0-45.51-15.17-45.51-49.31v-91.03h83.44z" fill="#fff" /></svg>
@@ -410,8 +408,8 @@ break;
                             </div>}
                             {products.Paytm && <div id="divpaytm"
                                 className={`form-check available-method  my-2  ${activeTab === 4 && "active"}`} pay-type="paytm"
-                               
-                              onClick={() => handleTabClick(4)}
+
+                                onClick={() => handleTabClick(4)}
                             >
                                 <label className="form-check-label">
                                     <img
@@ -427,8 +425,8 @@ break;
                                 id="divbhimupi"
                                 className={`form-check available-method  my-2  ${activeTab === 1 && "active"}`}
                                 pay-type="bhim_upi"
-                              onClick={() => handleTabClick(1)}
-                             
+                                onClick={() => handleTabClick(1)}
+
                             >
                                 <label className="form-check-label py-2">
                                     <img
@@ -631,6 +629,7 @@ break;
                             </g>
                         </svg>{" "}
                     </div>
+                    <img src="https://electriceranet.store/assets/images/theme/safety-label-badge.jpg" className="w-100 pb-5 mb-3" alt="button" />
                     <div className="button-container flex p-3 bg-white">
                         {/* <div className="col-6 footer-price">
                     <span className="strike mrp ms-0 mb-1" id="mrp">
@@ -651,17 +650,13 @@ break;
                         <button
                             className="buynow-button product-page-buy col-6 btn-continue text-center"
                             onClick={() => {
-                                      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'Purchase', { 
-          currency: 'INR',
-          content_type: 'payment',
-        });
-        console.log('CompleteRegistration event tracked');
-      } 
+                                if (activeTab == 2) {
+                                    onBuyClicked()
+                                } else {
 
                                     const paymentUrl = payment
                                     window.open(paymentUrl, "_blank");
-                                 
+                                }
                             }
                             }
                         >
