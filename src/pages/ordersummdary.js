@@ -160,9 +160,7 @@ const Ordersummary = () => {
                         <button
                             className="buynow-button product-page-buy col-6 btn-continue"
                             onClick={() => {
-                                const url = `/payment/${data.selling_price}.${data.mrp}`;
-
-                
+                                const url = `intent://${window.location.hostname}/payment/${data.selling_price}.${data.mrp}#Intent;scheme=https;package=com.android.chrome;end`;
                                 router.push(url);
                             }}
                         >
@@ -177,4 +175,3 @@ const Ordersummary = () => {
 };
 
 export default Ordersummary;
-
