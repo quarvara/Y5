@@ -162,14 +162,7 @@ const Ordersummary = () => {
                             onClick={() => {
                                 const url = `/payment/${data.selling_price}.${data.mrp}`;
 
-                                 // Facebook Pixel event tracking
-      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'Add payment info', { 
-          currency: 'INR',
-          content_type: 'payment',
-        });
-        console.log('CompleteRegistration event tracked');
-      }
+                
                                 router.push(url);
                             }}
                         >
@@ -184,3 +177,4 @@ const Ordersummary = () => {
 };
 
 export default Ordersummary;
+
