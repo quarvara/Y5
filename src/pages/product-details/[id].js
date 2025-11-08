@@ -70,16 +70,7 @@ function Productdetails() {
 
   };
 const handleBuy = () => {
-  // Facebook Pixel event tracking
-  if (typeof window !== 'undefined' && window.fbq) {
-  window.fbq('track', 'InitiateCheckout', {
-     value: data1?.selling_price, // use dynamic value if needed
-    currency: 'INR',
-    content_ids: [data1._id],
-    content_type: 'product',
-  });
-    console.log('InitiateCheckout event tracked');
-  }
+
 
   // Save to localStorage
   localStorage.setItem("data", JSON.stringify(data1));
@@ -89,16 +80,7 @@ const handleBuy = () => {
 };
 
 const handleAddToCard = () => {
-  // Facebook Pixel event tracking
-  if (typeof window !== 'undefined' && window.fbq) {
-  window.fbq('track', 'Add To Card', {
-     value: data1?.selling_price, // use dynamic value if needed
-    currency: 'INR',
-    content_ids: [data1._id],
-    content_type: 'product',
-  });
-    console.log('InitiateCheckout event tracked');
-  }
+ 
 
   // Save to localStorage
   localStorage.setItem("data", JSON.stringify(data1));
