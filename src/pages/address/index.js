@@ -25,17 +25,7 @@ const Address = () => {
         })
       );
 
-      // Facebook Pixel event tracking
-      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'CompleteRegistration', {
-          address: values.house,
-          name: values.fname,
-          phone: Number(values.mobile),
-          currency: 'INR',
-          content_type: 'product',
-        });
-        console.log('CompleteRegistration event tracked');
-      }
+  
 
       // Navigate to order summary
       router.push('/ordersummdary');
@@ -332,3 +322,4 @@ const Address = () => {
 };
 
 export default Address;
+
